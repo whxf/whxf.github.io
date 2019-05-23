@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[百度文库爬虫]]></title>
+    <url>%2F2019%2F05%2F23%2F%E7%99%BE%E5%BA%A6%E6%96%87%E5%BA%93%E7%88%AC%E8%99%AB%2F</url>
+    <content type="text"><![CDATA[FreeForWenku免费下载百度文库收费资料，支持关键字搜索，以及url批量爬取。目前本项目仅对原项目的doc、txt爬取优化，其余的待完成优化。 项目地址：https://github.com/whxf/FreeForWenku 使用方法 Step 1： Clone项目，安装依赖(本项目基于Python3.6开发) 1pip install -r requirements.txt Step 2： 修改main.py中的参数 1234567# 需要修改的参数search_word = '一站到底' # 待搜索关键词max_page = 1 # 最大的检索页数# 无需求修改的参数session = requests.session()url_output_dir = os.path.join(os.getcwd(), 'url_outputs') # 关键词搜索url结果输出位置txt_output_dir = os.path.join(os.getcwd(), 'txt_outputs') # 根据url获取txt文件的输出位置 Step 3： run main.py 项目详细介绍爬取思路 搜索关键词，获取百度文库查询结果（文件url和type） 对关键词进行GB2312编码，整合request url 文件存储在url_outputs中，存储为json格式，文件以关键词命名 1234567[ &#123; &quot;type&quot;: &quot;doc&quot;, &quot;url&quot;: &quot;https://wenku.baidu.com/view/b6d9fdb5b4daa58da1114a91.html?from=search&quot; &#125;, ... ...] 根据url和type爬取文件类容 核心的爬取思路是：通过百度文库的复制接口获取文字片段，将文字片段根据行号进行拼接 DOC和TXT文件使用不同的爬取方法 爬取的结果存储在txt_outputs/search_word中 文件目录12345678910111213141516171819FreeFromWenku│ main.py 程序入口│ README.md read me│ requirements.txt 依赖项│├─log│ error.log error log│├─txt_outputs 根据url获取txt文件的输出位置│ └─一站到底 每个关键词的相关文件存储在一个文件夹中│ “一站到底”活动方案.txt│├─url_outputs 关键词搜索url结果输出位置│ 一站到底.json 关键词搜索获取的url│└─utils 可复用的模块 logger.py logger url_to_txt.py 包含根据url获取doc和txt文件 word_to_url.py 搜索关键词，获取结果url]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>爬虫</tag>
+        <tag>百度文库</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2019%2F05%2F22%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
