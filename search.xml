@@ -1,47 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>百度文库爬虫</title>
-      <link href="/2019/05/23/%E7%99%BE%E5%BA%A6%E6%96%87%E5%BA%93%E7%88%AC%E8%99%AB/"/>
-      <url>/2019/05/23/%E7%99%BE%E5%BA%A6%E6%96%87%E5%BA%93%E7%88%AC%E8%99%AB/</url>
-      
-        <content type="html"><![CDATA[<h1 id="FreeForWenku"><a href="#FreeForWenku" class="headerlink" title="FreeForWenku"></a>FreeForWenku</h1><p>免费下载百度文库收费资料，支持关键字搜索，以及url批量爬取。目前本项目仅对原项目的doc、txt爬取优化，其余的待完成优化。</p><p>项目地址：<a href="https://github.com/whxf/FreeForWenku" target="_blank" rel="noopener">whxf/FreeForWenku</a></p><p><strong><em>声明：</em></strong> 本项目fork 自 <a href="https://github.com/Lz1y/FreeForWenku" target="_blank" rel="noopener">Lz1y/FreeForWenku</a>。对原有项目进行优化，添加支持关键字搜索，url批量爬取，logger等功能。</p><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><ul><li><strong><em>Step 1：</em></strong> Clone项目，安装依赖(本项目基于Python3.6开发)</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure><ul><li><strong><em>Step 2：</em></strong> 修改main.py中的参数 </li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 需要修改的参数</span></span><br><span class="line">search_word = <span class="string">'一站到底'</span>  <span class="comment">#  待搜索关键词</span></span><br><span class="line">max_page = <span class="number">1</span>  <span class="comment"># 最大的检索页数</span></span><br><span class="line"><span class="comment"># 无需求修改的参数</span></span><br><span class="line">session = requests.session()</span><br><span class="line">url_output_dir = os.path.join(os.getcwd(), <span class="string">'url_outputs'</span>)  <span class="comment"># 关键词搜索url结果输出位置</span></span><br><span class="line">txt_output_dir = os.path.join(os.getcwd(), <span class="string">'txt_outputs'</span>)  <span class="comment"># 根据url获取txt文件的输出位置</span></span><br></pre></td></tr></table></figure><ul><li><strong><em>Step 3：</em></strong>  run main.py</li></ul><h2 id="项目详细介绍"><a href="#项目详细介绍" class="headerlink" title="项目详细介绍"></a>项目详细介绍</h2><h3 id="爬取思路"><a href="#爬取思路" class="headerlink" title="爬取思路"></a>爬取思路</h3><ol><li>搜索关键词，获取百度文库查询结果（文件url和type）<ul><li>对关键词进行GB2312编码，整合request url</li><li>文件存储在url_outputs中，存储为json格式，文件以关键词命名</li></ul></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;type&quot;: &quot;doc&quot;,</span><br><span class="line">&quot;url&quot;: &quot;https://wenku.baidu.com/view/b6d9fdb5b4daa58da1114a91.html?from=search&quot;</span><br><span class="line">&#125;,</span><br><span class="line">    ... ...</span><br><span class="line">]</span><br></pre></td></tr></table></figure><ol start="2"><li>根据url和type爬取文件类容<ul><li>核心的爬取思路是：通过百度文库的复制接口获取文字片段，将文字片段根据行号进行拼接</li><li>DOC和TXT文件使用不同的爬取方法</li><li>爬取的结果存储在txt_outputs/search_word中</li></ul></li></ol><h3 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">FreeFromWenku</span><br><span class="line">│  main.py              程序入口</span><br><span class="line">│  README.md            read me</span><br><span class="line">│  requirements.txt     依赖项</span><br><span class="line">│</span><br><span class="line">├─log</span><br><span class="line">│      error.log        error log</span><br><span class="line">│</span><br><span class="line">├─txt_outputs           根据url获取txt文件的输出位置</span><br><span class="line">│  └─一站到底           每个关键词的相关文件存储在一个文件夹中</span><br><span class="line">│          “一站到底”活动方案.txt</span><br><span class="line">│</span><br><span class="line">├─url_outputs               关键词搜索url结果输出位置</span><br><span class="line">│      一站到底.json        关键词搜索获取的url</span><br><span class="line">│</span><br><span class="line">└─utils                     可复用的模块</span><br><span class="line">      logger.py             logger      </span><br><span class="line">      url_to_txt.py         包含根据url获取doc和txt文件</span><br><span class="line">      word_to_url.py        搜索关键词，获取结果url</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
+<search>
+  <entry>
+    <title><![CDATA[百度文库爬虫]]></title>
+    <url>%2F2019%2F05%2F23%2F%E7%99%BE%E5%BA%A6%E6%96%87%E5%BA%93%E7%88%AC%E8%99%AB%2F</url>
+    <content type="text"><![CDATA[FreeForWenku免费下载百度文库收费资料，支持关键字搜索，以及url批量爬取。目前本项目仅对原项目的doc、txt爬取优化，其余的待完成优化。 项目地址：whxf/FreeForWenku 声明： 本项目fork 自 Lz1y/FreeForWenku。对原有项目进行优化，添加支持关键字搜索，url批量爬取，logger等功能。 使用方法 Step 1： Clone项目，安装依赖(本项目基于Python3.6开发) 1pip install -r requirements.txt Step 2： 修改main.py中的参数 1234567# 需要修改的参数search_word = '一站到底' # 待搜索关键词max_page = 1 # 最大的检索页数# 无需求修改的参数session = requests.session()url_output_dir = os.path.join(os.getcwd(), 'url_outputs') # 关键词搜索url结果输出位置txt_output_dir = os.path.join(os.getcwd(), 'txt_outputs') # 根据url获取txt文件的输出位置 Step 3： run main.py 项目详细介绍爬取思路 搜索关键词，获取百度文库查询结果（文件url和type） 对关键词进行GB2312编码，整合request url 文件存储在url_outputs中，存储为json格式，文件以关键词命名 1234567[ &#123; &quot;type&quot;: &quot;doc&quot;, &quot;url&quot;: &quot;https://wenku.baidu.com/view/b6d9fdb5b4daa58da1114a91.html?from=search&quot; &#125;, ... ...] 根据url和type爬取文件类容 核心的爬取思路是：通过百度文库的复制接口获取文字片段，将文字片段根据行号进行拼接 DOC和TXT文件使用不同的爬取方法 爬取的结果存储在txt_outputs/search_word中 文件目录12345678910111213141516171819FreeFromWenku│ main.py 程序入口│ README.md read me│ requirements.txt 依赖项│├─log│ error.log error log│├─txt_outputs 根据url获取txt文件的输出位置│ └─一站到底 每个关键词的相关文件存储在一个文件夹中│ “一站到底”活动方案.txt│├─url_outputs 关键词搜索url结果输出位置│ 一站到底.json 关键词搜索获取的url│└─utils 可复用的模块 logger.py logger url_to_txt.py 包含根据url获取doc和txt文件 word_to_url.py 搜索关键词，获取结果url]]></content>
       <categories>
-          
-          <category> 爬虫 </category>
-          
+        <category>爬虫</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 爬虫 </tag>
-            
-            <tag> 百度文库 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/2019/05/22/hello-world/"/>
-      <url>/2019/05/22/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-  
-  
+      <tags>
+        <tag>爬虫</tag>
+        <tag>百度文库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F05%2F22%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
 </search>
