@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="自然语言处理,预训练,综述,">
 
 
 
@@ -79,13 +79,29 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Whxf的博客">
-<meta property="og:url" content="http://blog.xixilili.cn/index.html">
+<meta name="description" content="“预训练”的思路来源于图像领域，因此，首先追本溯源，从图像角度出发了解其基本思路。 图像领域的预训练什么是预训练以简要的预训练步骤进行说明：  设计好网络结构 在任务A上训练模型、学习参数 保存模型参数，以后备用（即与训练模型）  如何使用与训练模型使用与训练模型一般有两种做法：  Frozen：浅层加载的参数在新的任务上不改变。（一个简单的例子，加载预训练词向量，在模型训练中，词向量参数不改变）">
+<meta name="keywords" content="自然语言处理,预训练,综述">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自然语言处理中的预训练">
+<meta property="og:url" content="http://blog.xixilili.cn/2019/05/24/自然语言处理中的预训练/index.html">
 <meta property="og:site_name" content="Whxf的博客">
+<meta property="og:description" content="“预训练”的思路来源于图像领域，因此，首先追本溯源，从图像角度出发了解其基本思路。 图像领域的预训练什么是预训练以简要的预训练步骤进行说明：  设计好网络结构 在任务A上训练模型、学习参数 保存模型参数，以后备用（即与训练模型）  如何使用与训练模型使用与训练模型一般有两种做法：  Frozen：浅层加载的参数在新的任务上不改变。（一个简单的例子，加载预训练词向量，在模型训练中，词向量参数不改变）">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw690/006aR400ly1g3cefo23oyj31ou0u0gvs.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw690/006aR400ly1g3cegtvy6kj31h20u0woj.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/mw690/006aR400ly1g3cefo545sj31j70u0tnk.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/mw690/006aR400ly1g3cefo7f1rj31jx0u0aqh.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw690/006aR400ly1g3cg980nd4j31ld0u07l2.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/mw690/006aR400ly1g3cg982cc3j31ht0u0x4c.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw690/006aR400ly1g3cgd7nab3j31kn0u04eo.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/mw690/006aR400ly1g3cg97tvqjj31hl0u0qde.jpg">
+<meta property="og:image" content="https://wx4.sinaimg.cn/mw690/006aR400ly1g3cg97np06j31hw0u0wxc.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/mw690/006aR400ly1g3cge9abiqj31jb0u0ne4.jpg">
+<meta property="og:updated_time" content="2019-05-24T07:50:13.496Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Whxf的博客">
+<meta name="twitter:title" content="自然语言处理中的预训练">
+<meta name="twitter:description" content="“预训练”的思路来源于图像领域，因此，首先追本溯源，从图像角度出发了解其基本思路。 图像领域的预训练什么是预训练以简要的预训练步骤进行说明：  设计好网络结构 在任务A上训练模型、学习参数 保存模型参数，以后备用（即与训练模型）  如何使用与训练模型使用与训练模型一般有两种做法：  Frozen：浅层加载的参数在新的任务上不改变。（一个简单的例子，加载预训练词向量，在模型训练中，词向量参数不改变）">
+<meta name="twitter:image" content="https://wx1.sinaimg.cn/mw690/006aR400ly1g3cefo23oyj31ou0u0gvs.jpg">
 
 
 
@@ -115,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.xixilili.cn/">
+  <link rel="canonical" href="http://blog.xixilili.cn/2019/05/24/自然语言处理中的预训练/">
 
 
 
 
 
-  <title>Whxf的博客</title>
+  <title>自然语言处理中的预训练 | Whxf的博客</title>
   
 
 
@@ -140,8 +156,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -266,9 +281,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -298,9 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/24/自然语言处理中的预训练/" itemprop="url">自然语言处理中的预训练</a></h1>
+          <h1 class="post-title" itemprop="name headline">自然语言处理中的预训练</h1>
         
 
         <div class="post-meta">
@@ -393,9 +406,7 @@
       
 
       
-        
-          
-            <p>“预训练”的思路来源于图像领域，因此，首先追本溯源，从图像角度出发了解其基本思路。</p>
+        <p>“预训练”的思路来源于图像领域，因此，首先追本溯源，从图像角度出发了解其基本思路。</p>
 <h1 id="图像领域的预训练"><a href="#图像领域的预训练" class="headerlink" title="图像领域的预训练"></a>图像领域的预训练</h1><h2 id="什么是预训练"><a href="#什么是预训练" class="headerlink" title="什么是预训练"></a>什么是预训练</h2><p>以简要的预训练步骤进行说明：</p>
 <ol>
 <li>设计好网络结构</li>
@@ -477,8 +488,6 @@
 <li><a href="https://zhuanlan.zhihu.com/p/49271699" target="_blank" rel="noopener">从Word Embedding到Bert模型—自然语言处理中的预训练技术发展史</a></li>
 </ul>
 
-          
-        
       
     </div>
     
@@ -490,358 +499,61 @@
     
 
     
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    whxf
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://blog.xixilili.cn/2019/05/24/自然语言处理中的预训练/" title="自然语言处理中的预训练">http://blog.xixilili.cn/2019/05/24/自然语言处理中的预训练/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xixilili.cn/2019/05/23/百度文库爬虫/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="whxf">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Whxf的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/23/百度文库爬虫/" itemprop="url">百度文库爬虫</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-23T10:12:00+08:00">
-                2019-05-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/爬虫/" itemprop="url" rel="index">
-                    <span itemprop="name">爬虫</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/自然语言处理/" rel="tag"># 自然语言处理</a>
           
-
+            <a href="/tags/预训练/" rel="tag"># 预训练</a>
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/05/23/百度文库爬虫/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/23/百度文库爬虫/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
+            <a href="/tags/综述/" rel="tag"># 综述</a>
           
-
-          
-          
-             <span id="/2019/05/23/百度文库爬虫/" class="leancloud_visitors" data-flag-title="百度文库爬虫">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="FreeForWenku"><a href="#FreeForWenku" class="headerlink" title="FreeForWenku"></a>FreeForWenku</h1><p>免费下载百度文库收费资料，支持关键字搜索，以及url批量爬取。目前本项目仅对原项目的doc、txt爬取优化，其余的待完成优化。</p>
-<p>项目地址：<a href="https://github.com/whxf/FreeForWenku" target="_blank" rel="noopener">whxf/FreeForWenku</a></p>
-<p><strong><em>声明：</em></strong> 本项目fork 自 <a href="https://github.com/Lz1y/FreeForWenku" target="_blank" rel="noopener">Lz1y/FreeForWenku</a>。对原有项目进行优化，添加支持关键字搜索，url批量爬取，logger等功能。</p>
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><ul>
-<li><strong><em>Step 1：</em></strong> Clone项目，安装依赖(本项目基于Python3.6开发)</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong><em>Step 2：</em></strong> 修改main.py中的参数 </li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 需要修改的参数</span></span><br><span class="line">search_word = <span class="string">'一站到底'</span>  <span class="comment">#  待搜索关键词</span></span><br><span class="line">max_page = <span class="number">1</span>  <span class="comment"># 最大的检索页数</span></span><br><span class="line"><span class="comment"># 无需求修改的参数</span></span><br><span class="line">session = requests.session()</span><br><span class="line">url_output_dir = os.path.join(os.getcwd(), <span class="string">'url_outputs'</span>)  <span class="comment"># 关键词搜索url结果输出位置</span></span><br><span class="line">txt_output_dir = os.path.join(os.getcwd(), <span class="string">'txt_outputs'</span>)  <span class="comment"># 根据url获取txt文件的输出位置</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong><em>Step 3：</em></strong>  run main.py</li>
-</ul>
-<h2 id="项目详细介绍"><a href="#项目详细介绍" class="headerlink" title="项目详细介绍"></a>项目详细介绍</h2><h3 id="爬取思路"><a href="#爬取思路" class="headerlink" title="爬取思路"></a>爬取思路</h3><ol>
-<li>搜索关键词，获取百度文库查询结果（文件url和type）<ul>
-<li>对关键词进行GB2312编码，整合request url</li>
-<li>文件存储在url_outputs中，存储为json格式，文件以关键词命名</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;type&quot;: &quot;doc&quot;,</span><br><span class="line">		&quot;url&quot;: &quot;https://wenku.baidu.com/view/b6d9fdb5b4daa58da1114a91.html?from=search&quot;</span><br><span class="line">	&#125;,</span><br><span class="line">    ... ...</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>根据url和type爬取文件类容<ul>
-<li>核心的爬取思路是：通过百度文库的复制接口获取文字片段，将文字片段根据行号进行拼接</li>
-<li>DOC和TXT文件使用不同的爬取方法</li>
-<li>爬取的结果存储在txt_outputs/search_word中</li>
-</ul>
-</li>
-</ol>
-<h3 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">FreeFromWenku</span><br><span class="line">│  main.py              程序入口</span><br><span class="line">│  README.md            read me</span><br><span class="line">│  requirements.txt     依赖项</span><br><span class="line">│</span><br><span class="line">├─log</span><br><span class="line">│      error.log        error log</span><br><span class="line">│</span><br><span class="line">├─txt_outputs           根据url获取txt文件的输出位置</span><br><span class="line">│  └─一站到底           每个关键词的相关文件存储在一个文件夹中</span><br><span class="line">│          “一站到底”活动方案.txt</span><br><span class="line">│</span><br><span class="line">├─url_outputs               关键词搜索url结果输出位置</span><br><span class="line">│      一站到底.json        关键词搜索获取的url</span><br><span class="line">│</span><br><span class="line">└─utils                     可复用的模块</span><br><span class="line">      logger.py             logger      </span><br><span class="line">      url_to_txt.py         包含根据url获取doc和txt文件</span><br><span class="line">      word_to_url.py        搜索关键词，获取结果url</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.xixilili.cn/2019/05/22/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="whxf">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Whxf的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/22/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-22T13:37:22+08:00">
-                2019-05-22
-              </time>
+              <a href="/2019/05/23/百度文库爬虫/" rel="next" title="百度文库爬虫">
+                <i class="fa fa-chevron-left"></i> 百度文库爬虫
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/05/22/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/22/hello-world/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/05/22/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -851,10 +563,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -862,6 +575,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -882,8 +602,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -985,6 +714,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#图像领域的预训练"><span class="nav-number">1.</span> <span class="nav-text">图像领域的预训练</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是预训练"><span class="nav-number">1.1.</span> <span class="nav-text">什么是预训练</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用与训练模型"><span class="nav-number">1.2.</span> <span class="nav-text">如何使用与训练模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用预训练的优势"><span class="nav-number">1.3.</span> <span class="nav-text">使用预训练的优势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么预训练的思路可行"><span class="nav-number">1.4.</span> <span class="nav-text">为什么预训练的思路可行</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Word-Embedding"><span class="nav-number">2.</span> <span class="nav-text">Word Embedding</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#语言模型（LM）"><span class="nav-number">2.1.</span> <span class="nav-text">语言模型（LM）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络语言模型（NNLM）"><span class="nav-number">2.2.</span> <span class="nav-text">神经网络语言模型（NNLM）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Word2Vec"><span class="nav-number">2.3.</span> <span class="nav-text">Word2Vec</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用WE"><span class="nav-number">2.4.</span> <span class="nav-text">如何使用WE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WE存在的问题"><span class="nav-number">2.5.</span> <span class="nav-text">WE存在的问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Word-Embedding到ELMO"><span class="nav-number">3.</span> <span class="nav-text">Word Embedding到ELMO</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原理及使用"><span class="nav-number">3.1.</span> <span class="nav-text">原理及使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优缺点"><span class="nav-number">3.2.</span> <span class="nav-text">优缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Word-Embedding到GPT"><span class="nav-number">4.</span> <span class="nav-text">Word Embedding到GPT</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原理及使用-1"><span class="nav-number">4.1.</span> <span class="nav-text">原理及使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下游任务改造"><span class="nav-number">4.2.</span> <span class="nav-text">下游任务改造</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bert"><span class="nav-number">5.</span> <span class="nav-text">Bert</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原理及使用-2"><span class="nav-number">5.1.</span> <span class="nav-text">原理及使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下游任务改造-1"><span class="nav-number">5.2.</span> <span class="nav-text">下游任务改造</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1119,6 +864,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
