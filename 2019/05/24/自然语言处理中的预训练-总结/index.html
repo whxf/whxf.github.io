@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="自然语言处理,预训练,综述,">
 
 
 
@@ -79,14 +79,29 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://blog.xixilili.cn/categories/index.html">
+<meta name="description" content="“预训练”的思路来源于图像领域，因此，首先追本溯源，从图像角度出发了解其基本思路。 图像领域的预训练什么是预训练以简要的预训练步骤进行说明：  设计好网络结构 在任务A上训练模型、学习参数 保存模型参数，以后备用（即与训练模型）  如何使用与训练模型使用与训练模型一般有两种做法：  Frozen：浅层加载的参数在新的任务上不改变。（一个简单的例子，加载预训练词向量，在模型训练中，词向量参数不改变）">
+<meta name="keywords" content="自然语言处理,预训练,综述">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自然语言处理中的预训练--总结">
+<meta property="og:url" content="http://blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/index.html">
 <meta property="og:site_name" content="Whxf的博客">
+<meta property="og:description" content="“预训练”的思路来源于图像领域，因此，首先追本溯源，从图像角度出发了解其基本思路。 图像领域的预训练什么是预训练以简要的预训练步骤进行说明：  设计好网络结构 在任务A上训练模型、学习参数 保存模型参数，以后备用（即与训练模型）  如何使用与训练模型使用与训练模型一般有两种做法：  Frozen：浅层加载的参数在新的任务上不改变。（一个简单的例子，加载预训练词向量，在模型训练中，词向量参数不改变）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-23T02:30:59.396Z">
+<meta property="og:image" content="http://blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/1.png">
+<meta property="og:image" content="http://blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/2.png">
+<meta property="og:image" content="http://blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/3.png">
+<meta property="og:image" content="http://blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/4.png">
+<meta property="og:image" content="http://blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/5.png">
+<meta property="og:image" content="http://blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/6.png">
+<meta property="og:image" content="http://blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/7.png">
+<meta property="og:image" content="http://blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/8.png">
+<meta property="og:image" content="http://blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/9.png">
+<meta property="og:image" content="http://blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/10.png">
+<meta property="og:updated_time" content="2019-05-24T10:04:35.819Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="自然语言处理中的预训练--总结">
+<meta name="twitter:description" content="“预训练”的思路来源于图像领域，因此，首先追本溯源，从图像角度出发了解其基本思路。 图像领域的预训练什么是预训练以简要的预训练步骤进行说明：  设计好网络结构 在任务A上训练模型、学习参数 保存模型参数，以后备用（即与训练模型）  如何使用与训练模型使用与训练模型一般有两种做法：  Frozen：浅层加载的参数在新的任务上不改变。（一个简单的例子，加载预训练词向量，在模型训练中，词向量参数不改变）">
+<meta name="twitter:image" content="http://blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/1.png">
 
 
 
@@ -116,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.xixilili.cn/categories/">
+  <link rel="canonical" href="http://blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/">
 
 
 
 
 
-  <title>categories | Whxf的博客</title>
+  <title>自然语言处理中的预训练--总结 | Whxf的博客</title>
   
 
 
@@ -269,40 +284,289 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="whxf">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Whxf的博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">categories</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                目前共计 2 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/爬虫/">爬虫</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/自然语言处理/">自然语言处理</a><span class="category-list-count">2</span></li></ul>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">自然语言处理中的预训练--总结</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-24T18:00:00+08:00">
+                2019-05-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/自然语言处理/" itemprop="url" rel="index">
+                    <span itemprop="name">自然语言处理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/05/24/自然语言处理中的预训练-总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/24/自然语言处理中的预训练-总结/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/05/24/自然语言处理中的预训练-总结/" class="leancloud_visitors" data-flag-title="自然语言处理中的预训练--总结">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>“预训练”的思路来源于图像领域，因此，首先追本溯源，从图像角度出发了解其基本思路。</p>
+<h1 id="图像领域的预训练"><a href="#图像领域的预训练" class="headerlink" title="图像领域的预训练"></a>图像领域的预训练</h1><h2 id="什么是预训练"><a href="#什么是预训练" class="headerlink" title="什么是预训练"></a>什么是预训练</h2><p>以简要的预训练步骤进行说明：</p>
+<ol>
+<li>设计好网络结构</li>
+<li>在任务A上训练模型、学习参数</li>
+<li>保存模型参数，以后备用（即与训练模型）</li>
+</ol>
+<h2 id="如何使用与训练模型"><a href="#如何使用与训练模型" class="headerlink" title="如何使用与训练模型"></a>如何使用与训练模型</h2><p>使用与训练模型一般有两种做法：</p>
+<ol>
+<li>Frozen：浅层加载的参数在新的任务上不改变。（一个简单的例子，加载预训练词向量，在模型训练中，词向量参数不改变）</li>
+<li>Fine-Tuning：把参数进行微调，使得更适应当前任务。（同样以词向量为例，加载预训练词向量，词向量不固定，可随模型的训练改变）</li>
+</ol>
+<h2 id="使用预训练的优势"><a href="#使用预训练的优势" class="headerlink" title="使用预训练的优势"></a>使用预训练的优势</h2><p><strong><em>问题：</em></strong> 新任务训练数据少，则不能很好的训练复杂网络。</p>
+<p><strong><em>解决方案：</em></strong> 此时可使用大的数据集预训练模型，然后根据新任务的数据进行Fine-Tuning，使其能够解决新任务，如：ImageNet的使用。</p>
+<h2 id="为什么预训练的思路可行"><a href="#为什么预训练的思路可行" class="headerlink" title="为什么预训练的思路可行"></a>为什么预训练的思路可行</h2><p>预训练好的网络参数，底层的网络参数抽取出特征跟具体任务越无关，越具备任务的通用性。因此，一般用底层预训练好的参数初始化新任务网络参数。与之相反，高层特征跟任务关联较大。</p>
+<p>在图像领域，越是底层的特征越是不论什么领域的图像都会具备的，比如：边角线弧线等底层基础特征。在高层则可学习到任务相关的特征，如：五官的轮廓、脸轮廓等特征。</p>
+<h1 id="Word-Embedding"><a href="#Word-Embedding" class="headerlink" title="Word Embedding"></a>Word Embedding</h1><p>Word Embedding是从语言模型一步步演化形成的，下面魔术Word Embedding是如何形成的。</p>
+<h2 id="语言模型（LM）"><a href="#语言模型（LM）" class="headerlink" title="语言模型（LM）"></a>语言模型（LM）</h2><p>评估哪个句子更像合理的句子，根据句子中词语的上下文信息，计算条件概率进行评估。</p>
+<p><img src="//blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/1.png" alt="image"></p>
+<h2 id="神经网络语言模型（NNLM）"><a href="#神经网络语言模型（NNLM）" class="headerlink" title="神经网络语言模型（NNLM）"></a>神经网络语言模型（NNLM）</h2><p><img src="//blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/2.png" alt="image"></p>
+<p>学习任务是输入某个句中单词 W_t=“Bert” 前面句子的t-1个单词，要求网络正确预测单词Bert，即是的如下公式的P值最大化：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">P(W_t=&quot;Bert&quot;|W_1,W_2,…W_(t-1);θ)</span><br></pre></td></tr></table></figure>
+<p>其中 W_t 前面的词语 W_i 使用Onehot进行编码，作为单词的输出，然后乘以矩阵Q后获得向量 C(W_i)，每个单词的C进行拼接，上接隐层，然后接softmax去预测后面应该后续接哪个单词。 C(W_i)就是单词对应的Word embedding值。</p>
+<h2 id="Word2Vec"><a href="#Word2Vec" class="headerlink" title="Word2Vec"></a>Word2Vec</h2><p>Word2Vec是一个Word Embedding的工具，除此之外，Glove也是一个有名的工具，这里主要介绍Word2Vec的工作原理。</p>
+<p>Word2Vec的网络结构和NNLM是基本类似的，而且也是做语言模型任务，但是其训练方法不太一样。</p>
+<p><img src="//blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/3.png" alt="image"></p>
+<p>Word2Vec有两种训练方法：</p>
+<ul>
+<li>CBOW：核心思想是从一个句子里面把一个词抠掉，用这个词的上文和下文去预测被抠掉的这个词。</li>
+<li>Skip-gram，和CBOW正好反过来，输入某个单词，要求网络预测它的上下文单词。（输入一个词语，在不同的上下文环境下求条件概率，取得概率最高的作为最佳结果。）</li>
+</ul>
+<h2 id="如何使用WE"><a href="#如何使用WE" class="headerlink" title="如何使用WE"></a>如何使用WE</h2><p>与图像领域类似，有两种使用方式：</p>
+<ul>
+<li>Frozen：就是Word Embedding那层网络参数固定不动</li>
+<li>Fine-Tuning：就是Word Embedding这层参数使用新的训练集合训练也需要跟着训练过程更新</li>
+</ul>
+<h2 id="WE存在的问题"><a href="#WE存在的问题" class="headerlink" title="WE存在的问题"></a>WE存在的问题</h2><p>使用WE的效果并没有预想的好，主要问题是在NLP领域的多义词问题。比如：Bank的意思有银行和河岸两种，但是其WE表示只有一种无法进行区分。ELMO提供了一种简洁优雅的解决方案。</p>
+<h1 id="Word-Embedding到ELMO"><a href="#Word-Embedding到ELMO" class="headerlink" title="Word Embedding到ELMO"></a>Word Embedding到ELMO</h1><h2 id="原理及使用"><a href="#原理及使用" class="headerlink" title="原理及使用"></a>原理及使用</h2><p><img src="//blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/4.png" alt="image"></p>
+<p>第一个阶段是利用语言模型进行预训练；第二个阶段是在做下游任务时，从预训练网络中提取对应单词的网络各层的Word Embedding作为新特征补充到下游任务中。新特征指的是，根据上下文单词的语义去调整得到的单词的Word Embedding表示。</p>
+<p>ELMO的到了三个embedding：单词特征（word embedding），句法特征，语义特征。这三个Embedding中的每一个Embedding一个权重a，这个权重可以学习得来，根据各自权重累加求和，将三个Embedding整合成一个。然后将整合后的这个Embedding作为X句在自己任务的那个网络结构中对应单词的输入，以此作为补充的新特征给下游任务使用。</p>
+<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><ul>
+<li>优点：解决了多义词问题，同时，还能获取词语的词性特征，在句子语义关系判断，分类任务，阅读理解等多个领域表现很好，适用范围广、普适性强。</li>
+<li>缺点：<ul>
+<li>LSTM特征抽取能力若于Transformer</li>
+<li>双向拼接融合特征的能力弱于Bert的一体化融合能力</li>
+</ul>
+</li>
+</ul>
+<p><strong><em>总的来说，ELMO是通过LSTM获取了更多维度的信息，并将多维度的特征进行加权融合。</em></strong></p>
+<h1 id="Word-Embedding到GPT"><a href="#Word-Embedding到GPT" class="headerlink" title="Word Embedding到GPT"></a>Word Embedding到GPT</h1><h2 id="原理及使用-1"><a href="#原理及使用-1" class="headerlink" title="原理及使用"></a>原理及使用</h2><p>GPT的特征提取方式采用了fine-tuning。“Generative Pre-Training”的简称，生成式的预训练。</p>
+<p><img src="//blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/5.png" alt="image"></p>
+<p>第一个阶段是利用语言模型进行预训练，第二阶段通过Fine-tuning的模式解决下游任务。与ELMO的区别主要在于：1） 特征抽取器不是用的RNN，而是用的Transformer；2）GPT的预训练虽然仍然是以语言模型作为目标任务，但是采用的是单向的语言模型（这是GPT的一个缺点）。</p>
+<p><strong><em>注：Transformer是个叠加的“自注意力机制（Self Attention）”构成的深度网络，是目前NLP里最强的特征提取器</em></strong></p>
+<p><img src="//blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/6.png" alt="image"></p>
+<p>使用时，利用第一步预训练好的参数初始化GPT的网络结构，然后根据新任务训练网络进行Fine-tuning，使得这个网络更适合解决新任务。</p>
+<h2 id="下游任务改造"><a href="#下游任务改造" class="headerlink" title="下游任务改造"></a>下游任务改造</h2><p><img src="//blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/7.png" alt="image"></p>
+<p>从上图可看出，这种改造还是很方便的，不同任务只需要在输入部分施工即可：</p>
+<ul>
+<li>对于分类问题，加上一个起始和终结符号即可</li>
+<li>对于句子关系判断问题，两个句子中间再加个分隔符即可</li>
+<li>对文本相似性判断问题，把两个句子顺序颠倒下做出两个输入即可，这是为了告诉模型句子顺序不重要</li>
+<li>对于多项选择问题，则多路输入，每一路把文章和答案选项拼接作为输入即可</li>
+</ul>
+<h1 id="Bert"><a href="#Bert" class="headerlink" title="Bert"></a>Bert</h1><h2 id="原理及使用-2"><a href="#原理及使用-2" class="headerlink" title="原理及使用"></a>原理及使用</h2><p><img src="//blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/8.png" alt="image"></p>
+<p>Bert采用和GPT完全相同的两阶段模型，首先是语言模型预训练；其次是使用Fine-Tuning模式解决下游任务。和GPT的最主要不同在于在预训练阶段采用了类似ELMO的 <strong><em>双向语言模型</em></strong> ，当然另外一点是语言模型 <strong><em>数据规模要比GPT大</em></strong> 。其使用方式也与GPT类似。</p>
+<h2 id="下游任务改造-1"><a href="#下游任务改造-1" class="headerlink" title="下游任务改造"></a>下游任务改造</h2><p>主要任务包括：</p>
+<ul>
+<li>序列列标注：分词/POS Tag/NER/语义标注…</li>
+<li>分类任务：文本分类／情感计算…</li>
+<li>句子关系判断：Entailment/QA/自然语言推理…</li>
+<li>生成式任务：机器翻译／⽂本摘要…</li>
+</ul>
+<p>不同任务改造方式，除了对输入进行改造，输出也需要改造。经过对S2S改造，bert也可用到机器翻译或者文本摘要，聊天机器人这种生成式任务。</p>
+<p><img src="//blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/9.png" alt="image"></p>
+<p>从这里可以看出，NLP四大类任务都可以比较方便地改造成Bert能够接受的方式。这其实是Bert的非常大的优点，这意味着它几乎可以做任何NLP的下游任务，具备普适性，这是很强的。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><img src="//blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/10.png" alt="image"></p>
+<p><strong><em>本文参考了知乎专栏文章，对其内容进行了个性化总结，补充了自己的理解部分，有关bert部分会单独整理学习笔记</em></strong></p>
+<p>参考资料</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/49271699" target="_blank" rel="noopener">从Word Embedding到Bert模型—自然语言处理中的预训练技术发展史</a></li>
+</ul>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    whxf
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/" title="自然语言处理中的预训练--总结">http://blog.xixilili.cn/2019/05/24/自然语言处理中的预训练-总结/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/自然语言处理/" rel="tag"># 自然语言处理</a>
+          
+            <a href="/tags/预训练/" rel="tag"># 预训练</a>
+          
+            <a href="/tags/综述/" rel="tag"># 综述</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/24/自然语言处理中的预训练/" rel="next" title="自然语言处理中的预训练">
+                <i class="fa fa-chevron-left"></i> 自然语言处理中的预训练
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -338,8 +602,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -441,6 +714,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#图像领域的预训练"><span class="nav-number">1.</span> <span class="nav-text">图像领域的预训练</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是预训练"><span class="nav-number">1.1.</span> <span class="nav-text">什么是预训练</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用与训练模型"><span class="nav-number">1.2.</span> <span class="nav-text">如何使用与训练模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用预训练的优势"><span class="nav-number">1.3.</span> <span class="nav-text">使用预训练的优势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么预训练的思路可行"><span class="nav-number">1.4.</span> <span class="nav-text">为什么预训练的思路可行</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Word-Embedding"><span class="nav-number">2.</span> <span class="nav-text">Word Embedding</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#语言模型（LM）"><span class="nav-number">2.1.</span> <span class="nav-text">语言模型（LM）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络语言模型（NNLM）"><span class="nav-number">2.2.</span> <span class="nav-text">神经网络语言模型（NNLM）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Word2Vec"><span class="nav-number">2.3.</span> <span class="nav-text">Word2Vec</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用WE"><span class="nav-number">2.4.</span> <span class="nav-text">如何使用WE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WE存在的问题"><span class="nav-number">2.5.</span> <span class="nav-text">WE存在的问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Word-Embedding到ELMO"><span class="nav-number">3.</span> <span class="nav-text">Word Embedding到ELMO</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原理及使用"><span class="nav-number">3.1.</span> <span class="nav-text">原理及使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优缺点"><span class="nav-number">3.2.</span> <span class="nav-text">优缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Word-Embedding到GPT"><span class="nav-number">4.</span> <span class="nav-text">Word Embedding到GPT</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原理及使用-1"><span class="nav-number">4.1.</span> <span class="nav-text">原理及使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下游任务改造"><span class="nav-number">4.2.</span> <span class="nav-text">下游任务改造</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bert"><span class="nav-number">5.</span> <span class="nav-text">Bert</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原理及使用-2"><span class="nav-number">5.1.</span> <span class="nav-text">原理及使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下游任务改造-1"><span class="nav-number">5.2.</span> <span class="nav-text">下游任务改造</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Whxf的博客">
 <meta property="og:description" content="“预训练”的思路来源于图像领域，因此，首先追本溯源，从图像角度出发了解其基本思路。 图像领域的预训练什么是预训练以简要的预训练步骤进行说明：  设计好网络结构 在任务A上训练模型、学习参数 保存模型参数，以后备用（即与训练模型）  如何使用与训练模型使用与训练模型一般有两种做法：  Frozen：浅层加载的参数在新的任务上不改变。（一个简单的例子，加载预训练词向量，在模型训练中，词向量参数不改变）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://wx1.sinaimg.cn/mw690/006aR400ly1g3cefo23oyj31ou0u0gvs.jpg">
+<meta property="og:image" content="http://blog.xixilili.cn/2019/05/24/自然语言处理中的预训练/1.png">
 <meta property="og:image" content="https://wx1.sinaimg.cn/mw690/006aR400ly1g3cegtvy6kj31h20u0woj.jpg">
 <meta property="og:image" content="https://wx3.sinaimg.cn/mw690/006aR400ly1g3cefo545sj31j70u0tnk.jpg">
 <meta property="og:image" content="https://wx2.sinaimg.cn/mw690/006aR400ly1g3cefo7f1rj31jx0u0aqh.jpg">
@@ -97,11 +97,11 @@
 <meta property="og:image" content="https://wx2.sinaimg.cn/mw690/006aR400ly1g3cg97tvqjj31hl0u0qde.jpg">
 <meta property="og:image" content="https://wx4.sinaimg.cn/mw690/006aR400ly1g3cg97np06j31hw0u0wxc.jpg">
 <meta property="og:image" content="https://wx3.sinaimg.cn/mw690/006aR400ly1g3cge9abiqj31jb0u0ne4.jpg">
-<meta property="og:updated_time" content="2019-05-24T07:50:13.496Z">
+<meta property="og:updated_time" content="2019-05-24T09:59:29.798Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自然语言处理中的预训练">
 <meta name="twitter:description" content="“预训练”的思路来源于图像领域，因此，首先追本溯源，从图像角度出发了解其基本思路。 图像领域的预训练什么是预训练以简要的预训练步骤进行说明：  设计好网络结构 在任务A上训练模型、学习参数 保存模型参数，以后备用（即与训练模型）  如何使用与训练模型使用与训练模型一般有两种做法：  Frozen：浅层加载的参数在新的任务上不改变。（一个简单的例子，加载预训练词向量，在模型训练中，词向量参数不改变）">
-<meta name="twitter:image" content="https://wx1.sinaimg.cn/mw690/006aR400ly1g3cefo23oyj31ou0u0gvs.jpg">
+<meta name="twitter:image" content="http://blog.xixilili.cn/2019/05/24/自然语言处理中的预训练/1.png">
 
 
 
@@ -424,7 +424,7 @@
 <p>在图像领域，越是底层的特征越是不论什么领域的图像都会具备的，比如：边角线弧线等底层基础特征。在高层则可学习到任务相关的特征，如：五官的轮廓、脸轮廓等特征。</p>
 <h1 id="Word-Embedding"><a href="#Word-Embedding" class="headerlink" title="Word Embedding"></a>Word Embedding</h1><p>Word Embedding是从语言模型一步步演化形成的，下面魔术Word Embedding是如何形成的。</p>
 <h2 id="语言模型（LM）"><a href="#语言模型（LM）" class="headerlink" title="语言模型（LM）"></a>语言模型（LM）</h2><p>评估哪个句子更像合理的句子，根据句子中词语的上下文信息，计算条件概率进行评估。</p>
-<p><img src="https://wx1.sinaimg.cn/mw690/006aR400ly1g3cefo23oyj31ou0u0gvs.jpg" alt="image"></p>
+<p><img src="//blog.xixilili.cn/2019/05/24/自然语言处理中的预训练/1.png" alt="image"></p>
 <h2 id="神经网络语言模型（NNLM）"><a href="#神经网络语言模型（NNLM）" class="headerlink" title="神经网络语言模型（NNLM）"></a>神经网络语言模型（NNLM）</h2><p><img src="https://wx1.sinaimg.cn/mw690/006aR400ly1g3cegtvy6kj31h20u0woj.jpg" alt="image"></p>
 <p>学习任务是输入某个句中单词 W_t=“Bert” 前面句子的t-1个单词，要求网络正确预测单词Bert，即是的如下公式的P值最大化：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">P(W_t=&quot;Bert&quot;|W_1,W_2,…W_(t-1);θ)</span><br></pre></td></tr></table></figure>
@@ -549,6 +549,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/05/24/自然语言处理中的预训练-总结/" rel="prev" title="自然语言处理中的预训练--总结">
+                自然语言处理中的预训练--总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -629,7 +633,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
